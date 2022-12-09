@@ -46,7 +46,12 @@ const userSchema = mongoose.Schema({
 
 // advanced part
 
-
+userSchema.methods.sayHi=function(){
+  // note:
+  // aikhane obossoi function aivabei use korte hobe
+  // arrow function dewa jabe na cz this er use ase
+  console.log(`hi, ${this.name}.. this is a methods`);
+}
 
 
 
