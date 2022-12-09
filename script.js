@@ -32,15 +32,20 @@ createUser();
 ////////////////////////
 const findUserById = async (userId) => {
   const findedUser = await User.findById(userId);
+
+
   // find with query (return an array)
   // const anotherFind = await User.where("name").equals('sohan').limit(1).select('age')
-  // populate🔽🔽
-  const anotherFind = await User.where("name").equals('sohan').populate('bestfriend').limit(1)
-  // anotherFind[0].bestfriend = "6392dccf73970fa20c9ed12d"
-  // await anotherFind[0].save()
 
-  // console.log("▶ ➡ file: script.js:31 ➡ findUsers ➡ findedUser", findedUser);
-  console.log("▶ ➡ file: script.js:36 ➡ findUserById ➡ anotherFind", anotherFind);
+
+  // populate🔽🔽
+  // const anotherFind = await User.where("name").equals('sohan').limit(1)
+
+  // // anotherFind[0].bestfriend = "6392dccf73970fa20c9ed12d"
+  // await anotherFind[0].save()
+  // const anotherFind = await User.where("name").equals('sohan').populate('bestfriend').limit(1)
+  console.log("▶ ➡ file: script.js:31 ➡ findUsers ➡ findedUser", findedUser);
+  // console.log("▶ ➡ file: script.js:36 ➡ findUserById ➡ anotherFind", anotherFind);
 
 }
 findUserById("6392dcb3ac2603bced10b5c2")

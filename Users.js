@@ -44,4 +44,17 @@ const userSchema = mongoose.Schema({
   }
 })
 
+// advanced part
+
+
+
+
+
+
+
+
+
+// advanced part end
+
+
 module.exports = mongoose.model("UserData", userSchema)
