@@ -73,7 +73,14 @@ userSchema.virtual('nameEmail').get(function () {
 // another: 
 // pre & post
 
-
+userSchema.pre('save', function (next) {
+  this.updatedAt = Date.now()
+  next()
+})
+userSchema.post('save', function (doc,next) {
+  doc.sayHi()
+  next()
+})
 
 
 // advanced part end
