@@ -35,11 +35,12 @@ const findUserById = async (userId) => {
   findedUser.sayHi()
 
 
-
+  // note:
   // find with query (return an array)
   // const anotherFind = await User.where("name").equals('sohan').limit(1).select('age')
 
 
+  //imp: 
   // populate🔽🔽
   // const anotherFind = await User.where("name").equals('sohan').limit(1)
 
@@ -52,30 +53,39 @@ const findUserById = async (userId) => {
 }
 findUserById("6392dcb3ac2603bced10b5c2")
 
+  // com: 
+  // test advanced concept
 
-// test advanced concept
+const advancedTesting = async () => {
+  const staticMethodUser = await User.findName("kabir")
 
-const advancedTesting=async ()=>{
-  const staticMethodUser=await User.findName("kabir") 
-  //note: it is direct method 
+  //doc: 
+  // it is direct method 
+
   console.log("▶ ➡ file: script.js:58 ➡ advancedTesting ➡ user", staticMethodUser);
-  const queryMethodUser=await User.where().byName("sohan") 
-  //another: call it with query like where or find 
+  const queryMethodUser = await User.where().byName("sohan")
+
+  //doc: 
+  // call it with query like where or find 
+
   console.log("▶ ➡ file: script.js:60 ➡ advancedTesting ➡ anotherUser", queryMethodUser);
 
-  //7 Virtual attributes 
+  //note: Virtual attributes 
+
   console.log('nameEmail')
- queryMethodUser[0].nameEmail
-   
+  queryMethodUser[0].nameEmail
+
 }
 
 advancedTesting()
 
+// imp: 
+// pre and post
 console.log('pre and post 🔽🔽')
 const testPrePosts = async () => {
-  const userFindOne=await User.findOne({name:'kabir'})
+  const userFindOne = await User.findOne({ name: 'kabir' })
   console.log("▶ ➡ file: script.js:76 ➡ testPrePosts ➡ userFindOne", userFindOne);
-  
+
   userFindOne.save()
 }
 testPrePosts()

@@ -45,32 +45,37 @@ const userSchema = mongoose.Schema({
 })
 
 // advanced part
-
+// doc 
 //? methods 
 userSchema.methods.sayHi = function () {
   // note:
+  // imp: 
   // aikhane obossoi function aivabei use korte hobe
   // arrow function dewa jabe na cz this er use ase
   console.log(`⭐⭐ hi, ${this.name}.. this is a methods`);
 }
 
+// doc 
 //? static 
 
 userSchema.statics.findName = function (name) {
   return this.find({ name: new RegExp(name, 'i') })
 }
 
+// doc 
 // ? query 
 userSchema.query.byName = function (name) {
   return this.where({ name: new RegExp(name, 'i') })
 }
 
-// Virtual attributes
+// doc 
+//? Virtual attributes
 userSchema.virtual('nameEmail').get(function () {
   console.log(`${this.name}: <${this.email}>`);
 })
 
 // another: 
+// imp: 
 // pre & post
 
 userSchema.pre('save', function (next) {
