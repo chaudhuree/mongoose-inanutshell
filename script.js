@@ -32,6 +32,7 @@ createUser();
 ////////////////////////
 const findUserById = async (userId) => {
   const findedUser = await User.findById(userId);
+  findedUser.sayHi()
 
 
   // find with query (return an array)
@@ -49,3 +50,18 @@ const findUserById = async (userId) => {
 
 }
 findUserById("6392dcb3ac2603bced10b5c2")
+
+
+// test advanced concept
+
+const advancedTesting=async ()=>{
+  const staticMethodUser=await User.findName("kabir") 
+  //note: it is direct method 
+  console.log("▶ ➡ file: script.js:58 ➡ advancedTesting ➡ user", staticMethodUser);
+  const queryMethodUser=await User.where().byName("sohan") 
+  //another: call it with query like where or find 
+  console.log("▶ ➡ file: script.js:60 ➡ advancedTesting ➡ anotherUser", queryMethodUser);
+  
+   
+}
+advancedTesting()

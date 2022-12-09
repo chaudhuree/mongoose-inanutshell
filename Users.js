@@ -51,15 +51,22 @@ userSchema.methods.sayHi=function(){
   // note:
   // aikhane obossoi function aivabei use korte hobe
   // arrow function dewa jabe na cz this er use ase
-  console.log(`hi, ${this.name}.. this is a methods`);
+  console.log(`⭐⭐ hi, ${this.name}.. this is a methods`);
 }
 
 //? static 
 
-userSchema.static.findName=function(name) {
+userSchema.statics.findName=function(name) {
+  return this.find({name: new RegExp(name, 'i')})
+}
+
+// ? query 
+userSchema.query.byName=function(name) {
   return this.where({name: new RegExp(name, 'i')})
 }
 
+// another: 
+// pre & post
 
 
 
