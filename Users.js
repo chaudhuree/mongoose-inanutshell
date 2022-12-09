@@ -46,6 +46,7 @@ const userSchema = mongoose.Schema({
 
 // advanced part
 
+//? methods 
 userSchema.methods.sayHi=function(){
   // note:
   // aikhane obossoi function aivabei use korte hobe
@@ -53,7 +54,11 @@ userSchema.methods.sayHi=function(){
   console.log(`hi, ${this.name}.. this is a methods`);
 }
 
+//? static 
 
+userSchema.static.findName=function(name) {
+  return this.where({name: new RegExp(name, 'i')})
+}
 
 
 
