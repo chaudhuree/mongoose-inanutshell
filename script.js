@@ -8,8 +8,9 @@ const createUser=async () =>{
     const user= new User({
       name:'sohan',
       age:27,
-      email:'chaudhuree00@gmail.com',
+      email:'Chaudhuree00@gmail.com',
       createdAt:new Date(),
+      updatedAt:new Date(),
       hobbies:['video games','badminton'],
       address:{
         street:"rabindra sarabor",

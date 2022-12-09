@@ -9,11 +9,16 @@ const addressSchema = mongoose.Schema({
 })
 const userSchema = mongoose.Schema({
   name: String,
-  age: Number,
+  age: {
+    type: Number,
+    min: 20,
+    max: 36
+  },
   email: {
     type: String,
     lowercase: true,
-    required: true
+    required: true,
+    minLength: 10
   },
   createdAt: {
     type: Date,
