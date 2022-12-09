@@ -35,6 +35,7 @@ const findUserById = async (userId) => {
   findedUser.sayHi()
 
 
+
   // find with query (return an array)
   // const anotherFind = await User.where("name").equals('sohan').limit(1).select('age')
 
@@ -69,3 +70,12 @@ const advancedTesting=async ()=>{
 }
 
 advancedTesting()
+
+console.log('pre and post 🔽🔽')
+const testPrePosts = async () => {
+  const userFindOne=await User.findOne({name:'kabir'})
+  console.log("▶ ➡ file: script.js:76 ➡ testPrePosts ➡ userFindOne", userFindOne);
+  
+  userFindOne.save()
+}
+testPrePosts()
