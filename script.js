@@ -3,7 +3,7 @@ mongoose.connect('mongodb://localhost:27017/multiple',()=>console.log("database 
 
 const User=require('./Users')
 
-const run=async () =>{
+const createUser=async () =>{
   try {
     const user= new User({
       name:'sohan',
@@ -23,4 +23,4 @@ const run=async () =>{
     console.log(error.message)
   }
 }
-run();
+createUser();
