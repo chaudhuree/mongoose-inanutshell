@@ -38,16 +38,16 @@ const userSchema = mongoose.Schema({
   },
   hobbies: [String],
   address: addressSchema,
-  bestfriend:{
-    type:mongoose.SchemaTypes.ObjectId,
-    ref:'UserData'
+  bestfriend: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'UserData'
   }
 })
 
 // advanced part
 
 //? methods 
-userSchema.methods.sayHi=function(){
+userSchema.methods.sayHi = function () {
   // note:
   // aikhane obossoi function aivabei use korte hobe
   // arrow function dewa jabe na cz this er use ase
@@ -56,14 +56,19 @@ userSchema.methods.sayHi=function(){
 
 //? static 
 
-userSchema.statics.findName=function(name) {
-  return this.find({name: new RegExp(name, 'i')})
+userSchema.statics.findName = function (name) {
+  return this.find({ name: new RegExp(name, 'i') })
 }
 
 // ? query 
-userSchema.query.byName=function(name) {
-  return this.where({name: new RegExp(name, 'i')})
+userSchema.query.byName = function (name) {
+  return this.where({ name: new RegExp(name, 'i') })
 }
+
+// Virtual attributes
+userSchema.virtual('nameEmail').get(function () {
+  console.log(`${this.name}: <${this.email}>`);
+})
 
 // another: 
 // pre & post

@@ -61,7 +61,11 @@ const advancedTesting=async ()=>{
   const queryMethodUser=await User.where().byName("sohan") 
   //another: call it with query like where or find 
   console.log("▶ ➡ file: script.js:60 ➡ advancedTesting ➡ anotherUser", queryMethodUser);
-  
+
+  //7 Virtual attributes 
+  console.log('nameEmail')
+ queryMethodUser[0].nameEmail
    
 }
+
 advancedTesting()
