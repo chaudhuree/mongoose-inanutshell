@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+// address schema
 const addressSchema = mongoose.Schema({
   street: {
     type: String,
@@ -7,12 +8,18 @@ const addressSchema = mongoose.Schema({
   },
   road: Number
 })
+
+// user schema
 const userSchema = mongoose.Schema({
   name: String,
   age: {
     type: Number,
     min: 20,
-    max: 36
+    max: 36,
+    validate: {
+      validator: v => v % 2 === 0,
+      message: props => `${porps.value} is not an even number`
+    }
   },
   email: {
     type: String,
