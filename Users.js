@@ -37,7 +37,11 @@ const userSchema = mongoose.Schema({
     default: () => new Date()
   },
   hobbies: [String],
-  address: addressSchema
+  address: addressSchema,
+  bestfriend:{
+    type:mongoose.SchemaTypes.ObjectId,
+    ref:'UserData'
+  }
 })
 
 module.exports = mongoose.model("UserData", userSchema)
