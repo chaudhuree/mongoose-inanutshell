@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+//imp: sometime localhost do not work well. then have to use 127.0.0.1:27017
 mongoose.connect('mongodb://localhost:27017/multiple', () => console.log("database connected"));    // multiple is the name of db
 
-// Mongo DB Database Connection atlas
+//docs: Mongo DB Database Connection atlas
 
 // let URI="mongodb+srv://<username>:<password>@expresstaskmanager.grxys5y.mongodb.net/CRUD?retryWrites=true&w=majority" //CRUD is the name of db 
 //expresstaskmanager cluster name
