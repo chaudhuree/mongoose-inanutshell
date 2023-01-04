@@ -1,5 +1,16 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/multiple', () => console.log("database connected"));
+mongoose.connect('mongodb://localhost:27017/multiple', () => console.log("database connected"));    // multiple is the name of db
+
+// Mongo DB Database Connection atlas
+
+// let URI="mongodb+srv://<username>:<password>@expresstaskmanager.grxys5y.mongodb.net/CRUD?retryWrites=true&w=majority" //CRUD is the name of db 
+//expresstaskmanager cluster name
+// ;
+// let OPTION={user:'usercrud',pass:'usercrud',autoIndex:true}
+// mongoose.connect(URI,OPTION,(error)=>{
+//     console.log("Connection Success")
+//     console.log(error)
+// })
 
 const User = require('./Users')
 
